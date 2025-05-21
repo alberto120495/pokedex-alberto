@@ -1,8 +1,18 @@
 import React from 'react'
-
-function Pokemon() {
+import "./Pokemon.css"
+function Pokemon({datos}) {
   return (
-    <div>COMPONENTE POKEMON</div>
+    <div
+          className="card">
+          <h3>
+            {datos.name} (#{datos.id})
+          </h3>
+          <img src={datos.image} alt={datos.name} />
+          <p>Height: {datos.height / 10} m</p>
+          <p>Weight: {datos.weight / 10} kg</p>
+          <p>Type(s): {datos.types.join(", ")}</p>
+          <p>Abilities: {datos.abilities.join(", ")}</p>
+        </div>
   )
 }
 
